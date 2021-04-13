@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.thehinduclone.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.thehinduclone.ui.gallery.GalleryFragment"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.thehinduclone.ui.slideshow.SlideshowFragment"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nationalFragment"
+        android:name="com.example.thehinduclone.ui.menu.NationalFragment"
+        tools:layout="@layout/fragment_national" />
+    <fragment
+        android:id="@+id/internationalFragment"
+        android:name="com.example.thehinduclone.ui.menu.InternationalFragment"
+        tools:layout="@layout/fragment_international" />
+    <fragment
+        android:id="@+id/statesFragment"
+        android:name="com.example.thehinduclone.ui.menu.StatesFragment"
+        tools:layout="@layout/fragment_states" />
+    <fragment
+        android:id="@+id/businessFragment"
+        android:name="com.example.thehinduclone.ui.menu.BusinessFragment"
+        android:label="fragment_business"
+        tools:layout="@layout/fragment_business" />
+    <fragment
+        android:id="@+id/editorialsFragment"
+        android:name="com.example.thehinduclone.ui.menu.EditorialsFragment"
+        android:label="fragment_editorials"
+        tools:layout="@layout/fragment_editorials" />
+    <fragment
+        android:id="@+id/sportsFragment"
+        android:name="com.example.thehinduclone.ui.menu.SportsFragment"
+        android:label="fragment_sports"
+        tools:layout="@layout/fragment_sports" />
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="com.example.thehinduclone.ui.menu.EducationFragment"
+        android:label="fragment_education"
+        tools:layout="@layout/fragment_education" />
+    <fragment
+        android:id="@+id/entertainmentFragment"
+        android:name="com.example.thehinduclone.ui.menu.EntertainmentFragment"
+        android:label="fragment_entertainment"
+        tools:layout="@layout/fragment_entertainment" />
+    <fragment
+        android:id="@+id/scienceFragment"
+        android:name="com.example.thehinduclone.ui.menu.ScienceFragment"
+        android:label="fragment_science"
+        tools:layout="@layout/fragment_science" />
+    <fragment
+        android:id="@+id/technologyFragment"
+        android:name="com.example.thehinduclone.ui.menu.TechnologyFragment"
+        android:label="fragment_technology"
+        tools:layout="@layout/fragment_technology" />
+    <fragment
+        android:id="@+id/paperFragment"
+        android:name="com.example.thehinduclone.ui.menu.PaperFragment"
+        android:label="fragment_paper"
+        tools:layout="@layout/fragment_paper" />
+    <fragment
+        android:id="@+id/multimediaFragment"
+        android:name="com.example.thehinduclone.ui.menu.MultimediaFragment"
+        android:label="fragment_multimedia"
+        tools:layout="@layout/fragment_multimedia" />
+    <fragment
+        android:id="@+id/lifeStyleFragment"
+        android:name="com.example.thehinduclone.ui.menu.LifeStyleFragment"
+        android:label="fragment_life_style"
+        tools:layout="@layout/fragment_life_style" />
+    <fragment
+        android:id="@+id/citiesFragment"
+        android:name="com.example.thehinduclone.ui.menu.CitiesFragment"
+        android:label="fragment_cities"
+        tools:layout="@layout/fragment_cities" />
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.example.thehinduclone.ui.menu.BooksFragment"
+        android:label="fragment_books"
+        tools:layout="@layout/fragment_books" />
+    <fragment
+        android:id="@+id/archiveFragment"
+        android:name="com.example.thehinduclone.ui.menu.ArchiveFragment"
+        android:label="fragment_archive"
+        tools:layout="@layout/fragment_archive" />
+    <fragment
+        android:id="@+id/EPaperFragment"
+        android:name="com.example.thehinduclone.ui.menu.EPaperFragment"
+        android:label="fragment_e_paper"
+        tools:layout="@layout/fragment_e_paper" />
+    <fragment
+        android:id="@+id/newsInQuotesFragment"
+        android:name="com.example.thehinduclone.ui.menu.NewsInQuotesFragment"
+        android:label="fragment_news_in_quotes"
+        tools:layout="@layout/fragment_news_in_quotes" />
+    <fragment
+        android:id="@+id/wellbeingFragment"
+        android:name="com.example.thehinduclone.ui.menu.WellbeingFragment"
+        android:label="fragment_wellbeing"
+        tools:layout="@layout/fragment_wellbeing" />
+    <fragment
+        android:id="@+id/crosswordFragment"
+        android:name="com.example.thehinduclone.ui.menu.CrosswordFragment"
+        android:label="fragment_crossword"
+        tools:layout="@layout/fragment_crossword" />
+    <fragment
+        android:id="@+id/thReadFragment"
+        android:name="com.example.thehinduclone.ui.menu.ThReadFragment"
+        android:label="fragment_th_read"
+        tools:layout="@layout/fragment_th_read" />
+    <fragment
+        android:id="@+id/topPicksFragment"
+        android:name="com.example.thehinduclone.ui.menu.TopPicksFragment"
+        android:label="fragment_top_picks"
+        tools:layout="@layout/fragment_top_picks" />
+    <fragment
+        android:id="@+id/specialsFragment"
+        android:name="com.example.thehinduclone.ui.menu.SpecialsFragment"
+        android:label="fragment_specials"
+        tools:layout="@layout/fragment_specials" />
+    <fragment
+        android:id="@+id/newsDigestFragment"
+        android:name="com.example.thehinduclone.ui.menu.NewsDigestFragment"
+        android:label="fragment_news_digest"
+        tools:layout="@layout/fragment_news_digest" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.thehinduclone.ui.menu.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.thehinduclone.ui.menu.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/termsConditionsFragment"
+        android:name="com.example.thehinduclone.ui.menu.TermsConditionsFragment"
+        android:label="fragment_terms_conditions"
+        tools:layout="@layout/fragment_terms_conditions" />
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.example.thehinduclone.ui.menu.PrivacyPolicyFragment"
+        android:label="fragment_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+
+</navigation>
