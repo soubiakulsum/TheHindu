@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragments.TrustFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="413dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/adfree" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="News you can trust"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Fact-checked,unbiased,and truthful reporting.\n No disinformation and propaganda."
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
