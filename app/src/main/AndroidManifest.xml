@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.the_hindu">
+    package="com.example.thehinduclone">
 
     <application
         android:allowBackup="true"
@@ -10,18 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.The_Hindu">
         <activity android:name=".activities.MainScreenActivity">
+        android:theme="@style/Theme.TheHinduClone">
+        <activity android:name=".SearchBarActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".ReadLaterActivity" />
+        <activity
+            android:name=".ui.home.SideNavActivity"
+            android:label="@string/title_activity_side_nav"
+            android:theme="@style/Theme.TheHinduClone.NoActionBar" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.MyAccountsActivity" />
         <activity android:name=".activities.LocalizeHomeActivity">
 
         </activity>
         <activity android:name=".activities.PersonalizeHomeActivity" />
         <activity android:name=".activities.MainActivity" />
+
     </application>
 
 </manifest>

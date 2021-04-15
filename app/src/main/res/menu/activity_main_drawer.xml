@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_covid"
+            android:title="@string/menu_election" />
+        <item
+            android:id="@+id/nav_election"
+            android:title="@string/menu_covid_19" />
+        <item
+            android:id="@+id/nationalFragment"
+            android:title="@string/menu_national" />
+        <item
+            android:id="@+id/internationalFragment"
+            android:title="@string/menu_international" />
+        <item
+            android:id="@+id/statesFragment"
+            android:title="@string/menu_states" />
+        <item
+            android:id="@+id/businessFragment"
+            android:title="@string/business" />
+        <item
+            android:id="@+id/editorialsFragment"
+            android:title="@string/editorials" />
+        <item
+            android:id="@+id/sportsFragment"
+            android:title="@string/sports" />
+        <item
+            android:id="@+id/educationFragment"
+            android:title="@string/education" />
+        <item
+            android:id="@+id/entertainmentFragment"
+            android:title="@string/entertainment" />
+        <item
+            android:id="@+id/scienceFragment"
+            android:title="@string/science" />
+        <item
+            android:id="@+id/technologyFragment"
+            android:title="@string/technology" />
+        <item
+            android:id="@+id/paperFragment"
+            android:title="@string/todays_paper" />
+        <item
+            android:id="@+id/multimediaFragment"
+            android:title="@string/multimedia" />
+        <item
+            android:id="@+id/lifeStyleFragment"
+            android:title="@string/life_style" />
+        <item
+            android:id="@+id/citiesFragment"
+            android:title="@string/cities" />
+        <item
+            android:id="@+id/booksFragment"
+            android:title="@string/books" />
+        <item
+            android:id="@+id/archiveFragment"
+            android:title="@string/archive" />
+        <item
+            android:id="@+id/EPaperFragment"
+            android:title="@string/e_paper" />
+        <item
+            android:id="@+id/newsInQuotesFragment"
+            android:title="@string/news_in_quotes" />
+        <item
+            android:id="@+id/wellbeingFragment"
+            android:title="@string/wellbeing" />
+        <item
+            android:id="@+id/crosswordFragment"
+            android:title="@string/Crossword" />
+        <item
+            android:id="@+id/thReadFragment"
+            android:title="@string/th_read" />
+        <item
+            android:id="@+id/topPicksFragment"
+            android:title="@string/top_picks" />
+        <item
+            android:id="@+id/specialsFragment"
+            android:title="@string/specials" />
+        <item
+            android:id="@+id/newsDigestFragment"
+            android:title="@string/news_digest" />
+        <item
+            android:id="@+id/aboutUsFragment"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/helpFragment"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/termsConditionsFragment"
+            android:title="@string/terms_and_conditions" />
+        <item
+            android:id="@+id/privacyPolicyFragment"
+            android:title="@string/privacy_policy" />
+    </group>
+</menu>
