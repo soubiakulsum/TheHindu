@@ -10,11 +10,6 @@ import android.view.ViewGroup;
 
 import com.example.thehinduclone.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AboutUsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AboutUsFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match

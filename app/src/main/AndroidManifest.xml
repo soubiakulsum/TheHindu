@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheHinduClone">
+        <activity android:name=".SearchBarActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".ReadLaterActivity" />
         <activity
-            android:name=".SideNavActivity"
+            android:name=".ui.home.SideNavActivity"
             android:label="@string/title_activity_side_nav"
-            android:theme="@style/Theme.TheHinduClone.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.TheHinduClone.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

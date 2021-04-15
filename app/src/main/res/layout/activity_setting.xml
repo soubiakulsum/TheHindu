@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dp_10"
+            android:padding="@dimen/dp_5">
+
+            <ImageView
+                android:id="@+id/ivArrow3"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_50"
+                android:layout_margin="@dimen/dp_10"
+                android:src="@drawable/ic_left_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="@string/action_settings"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivArrow3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvArticleFontSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_20"
+        android:text="@string/article_font_size"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/textColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvSettings" />
+
+    <TextView
+        android:id="@+id/tvS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvArticleFontSize"
+        app:layout_constraintEnd_toStartOf="@id/tvM"
+        android:text="@string/s"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/textColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvM"
+        app:layout_constraintStart_toEndOf="@id/tvS"
+        app:layout_constraintTop_toBottomOf="@id/tvArticleFontSize"
+        app:layout_constraintEnd_toStartOf="@id/tvL"
+        android:text="@string/m"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvL"
+        app:layout_constraintStart_toEndOf="@id/tvM"
+        app:layout_constraintEnd_toStartOf="@id/tvXL"
+        app:layout_constraintTop_toBottomOf="@id/tvArticleFontSize"
+        android:text="@string/l"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvXL"
+        app:layout_constraintStart_toEndOf="@id/tvL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvArticleFontSize"
+        android:text="@string/xl"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="@id/tvS"
+        app:layout_constraintEnd_toEndOf="@id/tvXL"
+        app:layout_constraintTop_toBottomOf="@id/tvM"
+        android:layout_width="280dp"
+        android:max="3"
+        android:progress="1"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/grey"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+    <TextView
+        android:id="@+id/tvNightMode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        android:text="@string/night_mode"
+        android:textColor="@color/textColor"
+        android:padding="@dimen/dp_20"
+        android:textSize="@dimen/sp_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@id/tv1"
+        app:layout_constraintBottom_toBottomOf="@id/tv2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNightMode" />
+
+    <TextView
+        android:id="@+id/tvPushNotification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        android:text="@string/push_notification"
+        android:textSize="@dimen/sp_16"
+        android:padding="@dimen/dp_20"
+        android:textColor="@color/textColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Switch
+        app:layout_constraintTop_toTopOf="@id/tv2"
+        app:layout_constraintBottom_toBottomOf="@id/tv3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/dp_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPushNotification" />
+
+    <TextView
+        android:id="@+id/tvReadAloud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv3"
+        android:text="@string/read_aloud"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/textColor"
+        android:padding="@dimen/dp_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvReadAloud" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
