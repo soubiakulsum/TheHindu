@@ -7,18 +7,18 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.thehinduclone.ui.home.HomeFragment"
+        android:name="com.example.thehinduclone.ui.menu.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.thehinduclone.ui.gallery.GalleryFragment"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_election"
+        android:name="com.example.thehinduclone.ui.menu.ElectionFragment"
+        tools:layout="@layout/fragment_election" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.thehinduclone.ui.slideshow.SlideshowFragment"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_covid"
+        android:name="com.example.thehinduclone.ui.menu.CovidFragment"
+        tools:layout="@layout/fragment_covid" />
     <fragment
         android:id="@+id/nationalFragment"
         android:name="com.example.thehinduclone.ui.menu.NationalFragment"
@@ -34,7 +34,6 @@
     <fragment
         android:id="@+id/businessFragment"
         android:name="com.example.thehinduclone.ui.menu.BusinessFragment"
-        android:label="fragment_business"
         tools:layout="@layout/fragment_business" />
     <fragment
         android:id="@+id/editorialsFragment"

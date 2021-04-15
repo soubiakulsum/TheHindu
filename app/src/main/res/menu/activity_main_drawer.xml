@@ -8,10 +8,10 @@
             android:id="@+id/nav_home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_covid"
             android:title="@string/menu_election" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_election"
             android:title="@string/menu_covid_19" />
         <item
             android:id="@+id/nationalFragment"
@@ -24,7 +24,7 @@
             android:title="@string/menu_states" />
         <item
             android:id="@+id/businessFragment"
-            android:title="@string/menu_states" />
+            android:title="@string/business" />
         <item
             android:id="@+id/editorialsFragment"
             android:title="@string/editorials" />
