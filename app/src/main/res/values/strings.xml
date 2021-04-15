@@ -1,4 +1,9 @@
 <resources>
+
+    <string name="app_name">The_Hindu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="app_name">TheHinduClone</string>
     <string name="title_activity_side_nav"></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -51,5 +56,6 @@
     <string name="l">L</string>
     <string name="xl">XL</string>
     <string name="article_font_size">Article Font Size</string>
+
 
 </resources>

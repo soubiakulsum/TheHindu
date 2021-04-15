@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BriefingFragment">
+
+   <ImageView
+       android:layout_width="wrap_content"
+       android:layout_height="413dp"
+       android:scaleType="fitStart"
+       android:src="@drawable/briefedited" />
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:text="3 times a day Briefing"
+       android:layout_gravity="center"
+       android:layout_marginTop="20dp"
+       android:layout_height="wrap_content"/>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="10dp"
+       android:text="All the latest updates and developments \n of news thrice a day : 8AM,2PM &amp; 8 PM.\n Recommendations based on your selection."
+       android:layout_height="wrap_content"/>
+
+</LinearLayout>
