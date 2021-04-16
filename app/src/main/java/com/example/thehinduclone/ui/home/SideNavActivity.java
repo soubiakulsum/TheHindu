@@ -7,13 +7,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.thehinduclone.NotificationActivity;
 import com.example.thehinduclone.R;
 import com.example.thehinduclone.ReadLaterActivity;
+import com.example.thehinduclone.SearchBarActivity;
 import com.example.thehinduclone.SettingActivity;
 import com.example.thehinduclone.ui.menu.ElectionFragment;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -40,6 +44,11 @@ public class SideNavActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private ImageView mIvSearch;
+    private LinearLayout linearLayoutBriefing;
+    private LinearLayout linearLayoutTrending;
+    private LinearLayout linearLayoutPremium;
+    private LinearLayout linearLayoutMyAccount;
 
 
     @Override
@@ -50,6 +59,23 @@ public class SideNavActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_side_nav);
+
+        mIvSearch = findViewById(R.id.search);
+        linearLayoutBriefing = findViewById(R.id.llLayoutBriefing);
+        linearLayoutTrending = findViewById(R.id.llLayoutTrending);
+        linearLayoutPremium = findViewById(R.id.llLayoutPremium);
+        linearLayoutMyAccount = findViewById(R.id.llLayoutMyAccount);
+
+        openActivity();
+
+
+        mIvSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SideNavActivity.this, SearchBarActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,6 +102,7 @@ public class SideNavActivity extends AppCompatActivity {
 
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -145,4 +172,10 @@ public class SideNavActivity extends AppCompatActivity {
         }
         return super.onContextItemSelected(item);
     }
+
+    private void openActivity() {
+
+
+    }
+
 }

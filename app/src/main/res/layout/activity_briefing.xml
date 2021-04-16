@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReadLaterActivity">
+    tools:context=".kotlin.ui.BriefingActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvReadLater"
+        android:id="@+id/cvNotification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/backColor"
@@ -23,7 +23,7 @@
             android:padding="@dimen/dp_5">
 
             <ImageView
-                android:id="@+id/ivArrow1"
+                android:id="@+id/ivArrow2"
                 android:layout_width="@dimen/dp_40"
                 android:layout_height="@dimen/dp_50"
                 android:layout_margin="@dimen/dp_10"
@@ -32,53 +32,62 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dp_10"
-                android:text="Read Later"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toEndOf="@id/ivArrow2"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ivArrow1"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                android:src="@drawable/logo_actionbar"
+                />
 
             <ImageView
-                android:layout_width="@dimen/dp_40"
-                android:layout_height="@dimen/dp_40"
-                android:layout_marginEnd="@dimen/dp_10"
-                android:src="@drawable/ic_three_dots"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:src="@drawable/ic_three_dots"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <EditText
-        android:id="@+id/etSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:layout_marginEnd="@dimen/dp_10"
-        android:hint="Search"
-        android:textColorHint="@color/textColor"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/tvName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvReadLater" />
+        app:layout_constraintTop_toBottomOf="@id/cvNotification"
+        android:text="Hi Sanjoy Paul"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/tvTodaysBriefing"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        android:text="Today's Briefing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@id/tvTodaysBriefing"
+        app:layout_constraintStart_toStartOf="@id/tvTodaysBriefing"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViews"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_10"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSearch" />
-
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

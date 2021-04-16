@@ -1,6 +1,7 @@
 package com.example.thehinduclone;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import com.example.thehinduclone.ui.home.SideNavActivity;
 public class ReadLaterActivity extends AppCompatActivity {
 
     private ImageView mIvImage;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class ReadLaterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_read_later);
 
         mIvImage = findViewById(R.id.ivArrow1);
+        recyclerView = findViewById(R.id.recyclerViews);
 
         mIvImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheHinduClone">
-        <activity android:name=".SearchBarActivity"></activity>
+        <activity android:name=".kotlin.ui.PremiumActivity"></activity>
+        <activity android:name=".kotlin.ui.TrendingActivity" />
+        <activity android:name=".kotlin.ui.BriefingActivity" />
+        <activity android:name=".SearchBarActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".ReadLaterActivity" />
