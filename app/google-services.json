@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "941174829488",
+    "project_id": "news-app-6bb9d",
+    "storage_bucket": "news-app-6bb9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941174829488:android:608df2c48eb589f7de6675",
+        "android_client_info": {
+          "package_name": "com.thehindu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941174829488-n9rcilujf1rnasdenhilcg9oshlncgqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thehindu",
+            "certificate_hash": "86905fe8b1230d8cb0e0d600a727a51437f835dd"
+          }
+        },
+        {
+          "client_id": "941174829488-471v3u6oekdlm9a3a496b8lcmp9lii88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhSOczln9h3F8dFW6U6oFP7mtU1Mqldw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941174829488-471v3u6oekdlm9a3a496b8lcmp9lii88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

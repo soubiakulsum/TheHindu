@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.the_hindu">
-    package="com.example.thehinduclone">
+    package="com.thehindu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,30 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.The_Hindu">
-        <activity android:name=".activities.MainScreenActivity">
-        android:theme="@style/Theme.TheHinduClone">
-        <activity android:name=".SearchBarActivity"></activity>
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".NotificationActivity" />
-        <activity android:name=".ReadLaterActivity" />
-        <activity
-            android:name=".ui.home.SideNavActivity"
-            android:label="@string/title_activity_side_nav"
-            android:theme="@style/Theme.TheHinduClone.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.thehindu.the_hindu.activities.MainScreenActivity">
+
+        </activity>
+        <activity android:name="com.thehindu.thehinduclone.SearchBarActivity" />
+        <activity android:name="com.thehindu.themain.SelectedNewsActivity" />
+        <activity android:name="com.thehindu.themain.GoogleLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.MyAccountsActivity" />
-        <activity android:name=".activities.LocalizeHomeActivity">
+        <activity android:name="com.thehindu.thehinduclone.SettingActivity" />
+        <activity android:name="com.thehindu.thehinduclone.NotificationActivity" />
+        <activity android:name="com.thehindu.thehinduclone.ReadLaterActivity" />
+        <activity
+            android:name="com.thehindu.thehinduclone.ui.home.SideNavActivity"
+            android:label="@string/title_activity_side_nav"
+            android:theme="@style/Theme.TheHinduClone.NoActionBar" />
+        <activity android:name="com.thehindu.the_hindu.activities.MainActivity">
 
         </activity>
-        <activity android:name=".activities.PersonalizeHomeActivity" />
-        <activity android:name=".activities.MainActivity" />
+
+        <activity android:name="com.thehindu.the_hindu.activities.MyAccountsActivity" />
+        <activity android:name="com.thehindu.the_hindu.activities.LocalizeHomeActivity">
+
+        </activity>
+        <activity android:name="com.thehindu.the_hindu.activities.PersonalizeHomeActivity" />
+        <activity android:name="com.thehindu.thehinduclone.MainActivity">
+
+        </activity>
 
     </application>
 
