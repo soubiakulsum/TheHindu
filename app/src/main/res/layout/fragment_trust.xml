@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:layout_height="match_parent"
+tools:context=".the_hindu.fragments.TrustFragment">
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="400dp"
+    android:scaleType="fitStart"
+    android:src="@drawable/adfree" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:text="News you can trust"
+    android:textSize="@dimen/sp_20"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:textColor="@color/black"
+    android:text="Fact-checked,unbiased,and truthful \n reporting.No disinformation and \n propaganda."
+    android:gravity="center"
+    android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="170dp"
+        android:padding="@dimen/dp_15"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:background="#FFFF00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

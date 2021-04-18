@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheHinduClone">
-        <activity android:name=".kotlin.ui.PremiumActivity"></activity>
+        <activity android:name=".the_hindu.activities.PersonalizeHomeActivity"></activity>
+        <activity android:name=".the_hindu.activities.MainScreenActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".the_hindu.activities.LocalizeHomeActivity" />
+        <activity android:name=".kotlin.ui.PremiumActivity" />
         <activity android:name=".kotlin.ui.TrendingActivity" />
         <activity android:name=".kotlin.ui.BriefingActivity" />
         <activity android:name=".SearchBarActivity" />
@@ -21,11 +32,7 @@
             android:label="@string/title_activity_side_nav"
             android:theme="@style/Theme.TheHinduClone.NoActionBar" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

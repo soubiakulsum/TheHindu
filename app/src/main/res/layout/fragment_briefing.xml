@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".the_hindu.fragments.BriefingFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/briefedited" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:text="3 times a day Briefing"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="All the latest updates and \n developments of news thrice a day : \n 8AM,2PM &amp; 8 PM. Recommendations \n based on your selection." />
+
+</LinearLayout>
