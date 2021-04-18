@@ -1,7 +1,7 @@
 package com.thehindu.the_hindu.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.thehindu.R
 
 class MainActivity : AppCompatActivity() {

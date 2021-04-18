@@ -1,7 +1,9 @@
 package com.thehindu.thehinduclone.ui.home;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
@@ -18,18 +20,24 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.thehindu.the_hindu.activities.ProfileActivity;
 import com.thehindu.thehinduclone.NotificationActivity;
 import com.thehindu.R;
 import com.thehindu.thehinduclone.ReadLaterActivity;
 import com.thehindu.thehinduclone.SettingActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.thehindu.themain.BriefingActivity;
 import com.thehindu.themain.LocalConstants;
+import com.thehindu.themain.PreferenceHelper;
+import com.thehindu.themain.localdatabase.savedlist.SavedEntity;
+import com.thehindu.themain.models.recyclerview.NewsRvAdapter;
 import com.thehindu.themain.models.tokenreqres.JwtRequest;
 import com.thehindu.themain.services.ClientCalls;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -43,6 +51,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import okhttp3.Dispatcher;
@@ -52,9 +64,12 @@ import retrofit2.Response;
 
 public class SideNavActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
+    public static List<SavedEntity> savedListList = new ArrayList<>();
+
     private AppBarConfiguration mAppBarConfiguration;
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    public static NewsRvAdapter newsRvAdapter;
 
     private GoogleSignInOptions gso;
     private GoogleApiClient googleApiClient;
@@ -62,120 +77,123 @@ public class SideNavActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        checkwithgoogle();
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        setContentView(R.layout.activity_side_nav);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        viewPager = findViewById(R.id.viewPager);
-        tabLayout = findViewById(R.id.tabLayout);
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_election, R.id.nav_covid, R.id.nationalFragment, R.id.internationalFragment,
-                R.id.statesFragment, R.id.businessFragment, R.id.editorialsFragment, R.id.sportsFragment, R.id.educationFragment,
-                R.id.entertainmentFragment, R.id.scienceFragment, R.id.technologyFragment, R.id.multimediaFragment, R.id.lifeStyleFragment,
-                R.id.citiesFragment, R.id.booksFragment, R.id.newsInQuotesFragment, R.id.wellbeingFragment, R.id.thReadFragment,
-                R.id.topPicksFragment, R.id.specialsFragment)
-                .setDrawerLayout(drawer)
-                .build();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-        ViewPagerHomeAdapter adapter = new ViewPagerHomeAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        tabLayout.setupWithViewPager(viewPager);
-        viewPager.setAdapter(adapter);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int p = 0;
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        p = 0;
-                        break;
-                    case R.id.nav_covid:
-                        p = 1;
-                        break;
-                    case R.id.nav_election:
-                        p = 2;
-                        break;
-                    case R.id.nationalFragment:
-                        p = 3;
-                        break;
-                    case R.id.internationalFragment:
-                        p = 4;
-                        break;
-                    case R.id.statesFragment:
-                        p = 5;
-                        break;
-                    case R.id.businessFragment:
-                        p = 6;
-                        break;
-                    case R.id.editorialsFragment:
-                        p = 7;
-                        break;
-                    case R.id.sportsFragment:
-                        p = 8;
-                        break;
-                    case R.id.educationFragment:
-                        p = 9;
-                        break;
-                    case R.id.entertainmentFragment:
-                        p = 10;
-                        break;
-                    case R.id.scienceFragment:
-                        p = 11;
-                        break;
-                    case R.id.technologyFragment:
-                        p = 12;
-                        break;
-                    case R.id.multimediaFragment:
-                        p = 13;
-                        break;
-                    case R.id.lifeStyleFragment:
-                        p = 14;
-                        break;
-                    case R.id.citiesFragment:
-                        p = 15;
-                        break;
-                    case R.id.booksFragment:
-                        p = 16;
-                        break;
-                    case R.id.specialsFragment:
-                        p = 22;
-                        break;
-                }
-                viewPager.setCurrentItem(p);
-                drawer.closeDrawer(GravityCompat.START);
-                return true;
+        try {
+            if (PreferenceHelper.readBooleanFromPreference(LocalConstants.PREF_TOKEN_BOOLEAN)) {
+                checkwithgoogle();
+                ClientCalls.Companion.getInstances().getTheSavedList();
+            } else {
+                checkwithgoogle();
             }
-        });
 
-        ImageView ivHome = findViewById(R.id.ivHome);
-        ImageView ivBriefing = findViewById(R.id.ivBriefing);
-        ImageView ivTrending = findViewById(R.id.ivTrending);
-        ImageView ivPremium = findViewById(R.id.ivPremium);
-        ImageView ivMyAccount = findViewById(R.id.ivMyAccount);
-        ivHome.setOnClickListener(this);
-        ivBriefing.setOnClickListener(this);
-        ivTrending.setOnClickListener(this);
-        ivPremium.setOnClickListener(this);
-        ivMyAccount.setOnClickListener(this);
+            setContentView(R.layout.activity_side_nav);
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
 
+            viewPager = findViewById(R.id.viewPager);
+            tabLayout = findViewById(R.id.tabLayout);
+
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            NavigationView navigationView = findViewById(R.id.nav_view);
+
+            // Passing each menu ID as a set of Ids because each
+            // menu should be considered as top level destinations.
+            mAppBarConfiguration = new AppBarConfiguration.Builder(
+                    R.id.nav_home, R.id.nav_election, R.id.nav_covid, R.id.nationalFragment, R.id.internationalFragment,
+                    R.id.statesFragment, R.id.businessFragment, R.id.editorialsFragment, R.id.sportsFragment, R.id.educationFragment,
+                    R.id.entertainmentFragment, R.id.scienceFragment, R.id.technologyFragment, R.id.multimediaFragment, R.id.lifeStyleFragment,
+                    R.id.citiesFragment, R.id.booksFragment, R.id.newsInQuotesFragment, R.id.wellbeingFragment, R.id.thReadFragment,
+                    R.id.topPicksFragment, R.id.specialsFragment)
+                    .setDrawerLayout(drawer)
+                    .build();
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.setDrawerListener(toggle);
+            toggle.syncState();
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+            NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+            NavigationUI.setupWithNavController(navigationView, navController);
+            ViewPagerHomeAdapter adapter = new ViewPagerHomeAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+            tabLayout.setupWithViewPager(viewPager);
+            viewPager.setAdapter(adapter);
+            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    int p = 0;
+                    switch (item.getItemId()) {
+                        case R.id.nav_home:
+                            p = 0;
+                            break;
+                        case R.id.nav_covid:
+                            p = 1;
+                            break;
+                        case R.id.nav_election:
+                            p = 2;
+                            break;
+                        case R.id.nationalFragment:
+                            p = 3;
+                            break;
+                        case R.id.internationalFragment:
+                            p = 4;
+                            break;
+                        case R.id.statesFragment:
+                            p = 5;
+                            break;
+                        case R.id.businessFragment:
+                            p = 6;
+                            break;
+                        case R.id.editorialsFragment:
+                            p = 7;
+                            break;
+                        case R.id.sportsFragment:
+                            p = 8;
+                            break;
+                        case R.id.educationFragment:
+                            p = 9;
+                            break;
+                        case R.id.entertainmentFragment:
+                            p = 10;
+                            break;
+                        case R.id.scienceFragment:
+                            p = 11;
+                            break;
+                        case R.id.technologyFragment:
+                            p = 12;
+                            break;
+                        case R.id.multimediaFragment:
+                            p = 13;
+                            break;
+                        case R.id.lifeStyleFragment:
+                            p = 14;
+                            break;
+                        case R.id.citiesFragment:
+                            p = 15;
+                            break;
+                        case R.id.booksFragment:
+                            p = 16;
+                            break;
+                        case R.id.specialsFragment:
+                            p = 22;
+                            break;
+                    }
+                    viewPager.setCurrentItem(p);
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+            });
+
+            ImageView ivHome = findViewById(R.id.ivHome);
+            ImageView ivBriefing = findViewById(R.id.ivBriefing);
+            ImageView ivTrending = findViewById(R.id.ivTrending);
+            ImageView ivPremium = findViewById(R.id.ivPremium);
+            ImageView ivMyAccount = findViewById(R.id.ivMyAccount);
+            ivHome.setOnClickListener(this);
+            ivBriefing.setOnClickListener(this);
+            ivTrending.setOnClickListener(this);
+            ivPremium.setOnClickListener(this);
+            ivMyAccount.setOnClickListener(this);
+        } catch (Exception e) {
+            Log.d("TAG", "onCreate: " + e);
+        }
     }
 
     private void checkwithgoogle() {
@@ -183,22 +201,6 @@ public class SideNavActivity extends AppCompatActivity implements View.OnClickLi
                 new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
-
-//        logout.setOnClickListener {
-//            Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback {
-//                if (it.isSuccess) {
-//                    gotoMainActivity()
-//                    PreferenceHelper.writeBooleanToPreference(
-//                            LocalConstants.PREF_TOKEN_BOOLEAN,
-//                            false
-//                    )
-//                    PreferenceHelper.writeBooleanToPreference(LocalConstants.PREF_USER_LOGIN, false)
-//                    PreferenceHelper.writeStringToPreference(LocalConstants.PREF_TOKEN_VALUE, "")
-//                } else {
-//                    Toast.makeText(this, "logout unsuccessful", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        }
     }
 
     @Override
@@ -210,7 +212,6 @@ public class SideNavActivity extends AppCompatActivity implements View.OnClickLi
             GoogleSignInResult result = (GoogleSignInResult) opr.get();
             clientCalls.handleSignInResult(result);
         } else {
-
             opr.setResultCallback(result -> {
                 clientCalls.handleSignInResult((GoogleSignInResult) result);
             });
@@ -227,19 +228,19 @@ public class SideNavActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.ivBriefing:
-
+                intent = new Intent(this, BriefingActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ivTrending:
-
                 break;
             case R.id.ivPremium:
 
                 break;
             case R.id.ivMyAccount:
-
+                intent = new Intent(this, ProfileActivity.class);
+                startActivity(intent);
                 break;
         }
-
     }
 
     public void loadFragment(Fragment fragment) {

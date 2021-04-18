@@ -1,14 +1,14 @@
-package com.thehindu.the_hindu.activities
+package com.example.the_hindu.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.thehindu.R
 import com.thehindu.the_hindu.model.PersonaliseModel
 import com.thehindu.the_hindu.recycler.PersonaliseAdapter
 import com.thehindu.the_hindu.viewModels.PersonalizeViewModel
+import com.thehindu.R
 import kotlinx.android.synthetic.main.activity_personalize_home.*
 
 class LocalizeHomeActivity : AppCompatActivity() {
@@ -31,7 +31,7 @@ class LocalizeHomeActivity : AppCompatActivity() {
 
 
         viewModel.getList().observe(this, Observer{
-            selectionList.addAll(it)
+            selectionList.addAll(it as Collection<PersonaliseModel>)
             personaliseAdapter.notifyDataSetChanged()
         })
 

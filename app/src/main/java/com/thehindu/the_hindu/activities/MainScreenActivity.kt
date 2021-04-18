@@ -1,34 +1,47 @@
 package com.thehindu.the_hindu.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.thehindu.R
-import com.thehindu.the_hindu.adapters.FragmentAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
+import com.thehindu.the_hindu.adapter.FragmentAdapter
 
 
 /**
  * This Activity demonstrates a simple view pager where there are 3 Fragments
  */
-
-class MainScreenActivity : AppCompatActivity(), OnTabSelectedListener {
+class MainScreenActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     private var mViewPager: ViewPager2? = null
     private var tabLayout: TabLayout? = null
+
+    lateinit var mTvNext: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_screen)
         initViews()
         setViewPagerAdapter()
     }
 
+
     private fun initViews() {
+
+        mTvNext = findViewById(R.id.tvNext)
         mViewPager = findViewById(R.id.mViewPager)
-//        tabLayout = findViewById(R.id.tabLayout)
+        tabLayout = findViewById(R.id.tabLayout)
         tabLayout?.addOnTabSelectedListener(this)
+
+        mTvNext.setOnClickListener(View.OnClickListener {
+            intent = Intent(applicationContext, MainActivity2::class.java)
+            startActivity(intent)
+        })
     }
 
     /**
@@ -50,7 +63,7 @@ class MainScreenActivity : AppCompatActivity(), OnTabSelectedListener {
             TabLayoutMediator(
                 it, mViewPager!!
             )
-            { tab, position -> Log.d("pravin", "onConfigureTab called") }.attach()
+            { tab, position -> Log.d("sanjoy", "onConfigureTab called") }.attach()
         }
 
     }
@@ -75,4 +88,5 @@ class MainScreenActivity : AppCompatActivity(), OnTabSelectedListener {
     override fun onTabReselected(tab: TabLayout.Tab) {
         Log.d("Lloyd", "onTabReselected")
     }
+
 }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AccountsActivity">
+
+    <ImageButton
+        android:id="@+id/iBtnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/accounts_recycler"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iBtnBack" />
+
+    <com.kingfisher.easyviewindicator.RecyclerViewIndicator
+        android:id="@+id/recyclerViewIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/accounts_recycler"
+        app:avi_animation_enable="true"
+        app:avi_drawable="@drawable/ic_circleblack"
+        app:avi_drawable_unselected="@drawable/ic_circle"
+        app:avi_height="5dp"
+        app:avi_margin="5dp"
+        app:avi_width="5dp">
+
+    </com.kingfisher.easyviewindicator.RecyclerViewIndicator>
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewIndicator"
+        android:layout_margin="20dp"
+        android:background="@drawable/pre_btn_bg"
+        android:backgroundTint="#1A5276"
+        android:text="Sign Up for free Trial"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:elevation="50dp"
+        app:cardCornerRadius="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSubscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:text="Subscribe now for exclusive features"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnExplore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSubscribe"
+                android:layout_margin="10dp"
+                android:background="@drawable/pre_btn_bg"
+                android:backgroundTint="#1A5276"
+                android:text="Explore our subscription plans"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvHaveAnAccount"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnExplore"
+                android:layout_centerHorizontal="true"
+                android:text="Already have an account? "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnExplore"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/tvHaveAnAccount"
+                android:text="Sign In"
+                android:textColor="#1A5276" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

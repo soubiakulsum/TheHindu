@@ -1,17 +1,17 @@
-package com.thehindu.the_hindu.repositories
+package com.example.the_hindu.repositories
+
 
 import com.thehindu.the_hindu.model.PersonaliseModel
-import com.thehindu.the_hindu.utils.Selecting
 
 class PersonaliseRepository {
 
-    fun getSelectionList() : List<PersonaliseModel>{
+    fun getSelectionList(): List<PersonaliseModel>? {
 
-        return Selecting.getCategory()
+        return null;
 
     }
 
-    fun getStateList() : List<PersonaliseModel>{
-        return Selecting.getState()
+    fun getStateList(): List<PersonaliseModel>? {
+        return null;
     }
 }

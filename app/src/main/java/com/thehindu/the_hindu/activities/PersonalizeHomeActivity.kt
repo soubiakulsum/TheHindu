@@ -32,7 +32,7 @@ class PersonalizeHomeActivity : AppCompatActivity() {
 
 
         viewModel.getList().observe(this, Observer {
-            selectionList.addAll(it)
+            selectionList.addAll(it as Collection<PersonaliseModel>)
             personaliseAdapter.notifyDataSetChanged()
         })
 

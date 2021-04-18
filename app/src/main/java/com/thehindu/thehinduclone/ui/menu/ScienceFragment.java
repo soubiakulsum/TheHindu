@@ -5,13 +5,30 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+
+import com.thehindu.R;
+import com.thehindu.thehinduclone.ui.home.SideNavActivity;
+import com.thehindu.themain.listeners.CommunicationListernerForReadList;
+import com.thehindu.themain.models.NewsResponse;
+import com.thehindu.themain.models.recyclerview.NewsRvAdapter;
+import com.thehindu.themain.services.ClientCalls;
+
+import java.util.List;
 
 
-public class ScienceFragment extends Fragment {
+public class ScienceFragment extends Fragment implements CommunicationListernerForReadList {
+    ClientCalls clientCalls = ClientCalls.Companion.getInstances();
+    List<NewsResponse> newsResponses;
+    RecyclerView recyclerView;
 
-    public static ScienceFragment newInstance(){
+    public static ScienceFragment newInstance() {
         ScienceFragment scienceFragment = new ScienceFragment();
         return scienceFragment;
     }
@@ -19,6 +36,37 @@ public class ScienceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        SwipeRefreshLayout refreshRv = view.findViewById(R.id.refresh_science);
+        newsResponses = clientCalls.getSpecificNews(23, "science");
+        recyclerView = view.findViewById(R.id.rv_science);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        SideNavActivity.newsRvAdapter = new NewsRvAdapter(newsResponses, this);
+        recyclerView.setAdapter(SideNavActivity.newsRvAdapter);
+        SideNavActivity.newsRvAdapter.notifyDataSetChanged();
+
+        refreshRv.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshRv.setRefreshing(true);
+                newsResponses = clientCalls.getSpecificNews(23, "science");
+                SideNavActivity.newsRvAdapter = new NewsRvAdapter(newsResponses,
+                        ScienceFragment.this);
+                recyclerView.setAdapter(SideNavActivity.newsRvAdapter);
+                SideNavActivity.newsRvAdapter.notifyDataSetChanged();
+                refreshRv.setRefreshing(false);
+            }
+        });
     }
 
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_science, container, false);
+        return root;
+    }
+
+    @Override
+    public void save_it(int id) {
+
+    }
 }

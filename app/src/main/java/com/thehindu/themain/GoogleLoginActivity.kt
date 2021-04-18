@@ -28,7 +28,7 @@ class GoogleLoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFai
         googleApiClient = GoogleApiClient.Builder(this).enableAutoManage(this, this)
             .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build()
 
-        signInButton = findViewById(R.id.btn_login_with_google);
+        signInButton = findViewById(R.id.btn_login_with_google)
 
         if (PreferenceHelper.readBooleanFromPreference(LocalConstants.PREF_USER_LOGIN)) {
             val intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);

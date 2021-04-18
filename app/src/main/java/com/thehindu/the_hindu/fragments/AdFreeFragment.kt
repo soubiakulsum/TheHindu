@@ -17,8 +17,8 @@ class AdFreeFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ad_free, container, false)
@@ -27,7 +27,7 @@ class AdFreeFragment : Fragment() {
     companion object {
         var ARG_PARAM1 = ""
 
-        fun newInstance(param1: String?) : AdFreeFragment{
+        fun newInstance(param1: String?) : AdFreeFragment {
             val adFreeFragment = AdFreeFragment()
             val args = Bundle()
             ARG_PARAM1 = param1 !!

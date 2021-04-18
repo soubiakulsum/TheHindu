@@ -3,8 +3,8 @@ package com.thehindu.the_hindu.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.the_hindu.repositories.PersonaliseRepository
 import com.thehindu.the_hindu.model.PersonaliseModel
-import com.thehindu.the_hindu.repositories.PersonaliseRepository
 
 class PersonalizeViewModel : ViewModel() {
 

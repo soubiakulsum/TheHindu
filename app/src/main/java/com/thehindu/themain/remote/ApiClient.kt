@@ -1,7 +1,9 @@
 package com.thehindu.themain.remote
 
 import androidx.annotation.CheckResult
+import com.thehindu.themain.localdatabase.savedlist.SavedEntity
 import com.thehindu.themain.models.NewsResponse
+import com.thehindu.themain.models.UserResponse
 import com.thehindu.themain.models.tokenreqres.JwtRequest
 import com.thehindu.themain.models.tokenreqres.JwtResponse
 import retrofit2.Call
@@ -41,4 +43,41 @@ interface ApiClient {
         @Path("id") id: Int?
     ): Call<Boolean>
 
+    @GET("/getSavedList/{id}")
+    fun getSavedList(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: Int?
+    ): Call<List<SavedEntity>>
+
+    @GET("/newsbycategory/{id}/{str}")
+    fun getSpecificNews(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: Int?,
+        @Path("str") str: String?
+    ): Call<List<NewsResponse>>
+
+    @GET("/getallsavednews")
+    fun getAllSavedNews(
+        @Header("Authorization") bearerToken: String
+    ): Call<List<NewsResponse>>
+
+    @DELETE("/delete_entry/{id}")
+    suspend fun deleteTheEntry(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: Int?
+    )
+
+    @GET("/isuservalid")
+    fun isUserValid(@Header("Authorization") bearerToken: String): Call<Boolean>
+
+    @GET("/getuser")
+    fun getUser(@Header("Authorization") bearerToken: String): Call<UserResponse>
+
+    @PATCH("/updateuser/{a}/{b}/{c}")
+    suspend fun updateUser(
+        @Header("Authorization") bearerToken: String,
+        @Path("a") name: String,
+        @Path("b") mobile: String,
+        @Path("c") dob: String
+    )
 }

@@ -3,6 +3,7 @@
     package="com.thehindu">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -10,39 +11,33 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.The_Hindu">
-        <activity android:name="com.thehindu.the_hindu.activities.MainScreenActivity">
-
-        </activity>
-        <activity android:name="com.thehindu.thehinduclone.SearchBarActivity" />
-        <activity android:name="com.thehindu.themain.SelectedNewsActivity" />
-        <activity android:name="com.thehindu.themain.GoogleLoginActivity">
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity android:name=".themain.BriefingActivity"></activity>
+        <activity android:name=".themain.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.thehindu.thehinduclone.SettingActivity" />
-        <activity android:name="com.thehindu.thehinduclone.NotificationActivity" />
-        <activity android:name="com.thehindu.thehinduclone.ReadLaterActivity" />
-        <activity
-            android:name="com.thehindu.thehinduclone.ui.home.SideNavActivity"
-            android:label="@string/title_activity_side_nav"
-            android:theme="@style/Theme.TheHinduClone.NoActionBar" />
-        <activity android:name="com.thehindu.the_hindu.activities.MainActivity">
+        <activity android:name=".the_hindu.activities.MainScreenActivity" />
+        <activity android:name=".thehinduclone.SearchBarActivity" />
+        <activity android:name=".themain.SelectedNewsActivity" />
+        <activity android:name=".themain.GoogleLoginActivity" />
+        <activity android:name=".thehinduclone.SettingActivity" />
+        <activity android:name=".thehinduclone.NotificationActivity" />
+        <activity android:name=".thehinduclone.ReadLaterActivity" />
+        <activity android:name=".thehinduclone.ui.home.SideNavActivity" />
+        <activity android:name=".the_hindu.activities.MainActivity" />
+        <activity android:name=".the_hindu.activities.MainActivity2" />
+        <activity android:name=".the_hindu.activities.MyAccountsActivity" />
+        <activity android:name=".the_hindu.activities.ProfileActivity" />
+        <activity android:name=".the_hindu.activities.PersonalizeHomeActivity" />
+        <activity android:name=".thehinduclone.MainActivity" />
 
-        </activity>
-
-        <activity android:name="com.thehindu.the_hindu.activities.MyAccountsActivity" />
-        <activity android:name="com.thehindu.the_hindu.activities.LocalizeHomeActivity">
-
-        </activity>
-        <activity android:name="com.thehindu.the_hindu.activities.PersonalizeHomeActivity" />
-        <activity android:name="com.thehindu.thehinduclone.MainActivity">
-
-        </activity>
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

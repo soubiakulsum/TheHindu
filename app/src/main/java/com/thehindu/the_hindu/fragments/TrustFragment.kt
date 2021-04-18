@@ -7,16 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.thehindu.R
 
-
-
-
 class TrustFragment : Fragment() {
 
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_trust, container, false)
@@ -26,7 +23,7 @@ class TrustFragment : Fragment() {
 
         var ARG_PARAM1 = ""
 
-        fun newInstance(param1: String?) : TrustFragment{
+        fun newInstance(param1: String?) : TrustFragment {
             val trustFragment = TrustFragment()
             val args = Bundle()
             ARG_PARAM1 = param1!!

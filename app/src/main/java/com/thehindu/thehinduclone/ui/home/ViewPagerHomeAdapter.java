@@ -30,7 +30,6 @@ import com.thehindu.thehinduclone.ui.menu.WellbeingFragment;
 import com.thehindu.thehinduclone.ui.menu.CovidFragment;
 
 public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
-
     public ViewPagerHomeAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }

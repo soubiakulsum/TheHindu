@@ -17,7 +17,7 @@ class NewsRvAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsRvViewHolder {
         val v =
             LayoutInflater.from(parent.context).inflate(R.layout.rv_home_item_layout, parent, false)
-        return NewsRvViewHolder(v,communicationListernerForReadList)
+        return NewsRvViewHolder(v, communicationListernerForReadList)
     }
 
     override fun getItemCount(): Int {
@@ -26,6 +26,10 @@ class NewsRvAdapter(
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: NewsRvViewHolder, position: Int) {
-        holder.setData(newsResponseList[position])
+        try {
+            holder.setData(newsResponseList[position])
+        } catch (e: Exception) {
+
+        }
     }
 }
