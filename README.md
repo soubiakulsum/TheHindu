@@ -2,6 +2,16 @@
 
 The Best News App We have Cloned with Lot of features
 
+
+-> Signin With Google.
+-> News With Various Categories.
+-> News reading with various font size.
+-> Read in Night Mode.
+-> Infinte Scrolling.
+-> Read Later.
+
+
+
 Dependencies Used in the app
 
     //For Image Processing
