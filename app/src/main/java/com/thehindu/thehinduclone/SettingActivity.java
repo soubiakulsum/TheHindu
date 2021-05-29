@@ -22,6 +22,7 @@ import com.thehindu.thehinduclone.ui.home.SideNavActivity;
 import com.thehindu.R;
 import com.thehindu.themain.LocalConstants;
 import com.thehindu.themain.PreferenceHelper;
+import com.thehindu.themain.SplashActivity;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -76,6 +77,9 @@ public class SettingActivity extends AppCompatActivity {
                         PreferenceHelper.writeStringToPreference(LocalConstants.PREF_TOKEN_VALUE, "");
                         PreferenceHelper.writeBooleanToPreference(LocalConstants.PREF_USER_LOGIN, false);
                         progressBar.setVisibility(View.GONE);
+                        Intent i = new Intent(SettingActivity.this, SplashActivity.class);
+                        startActivity(i);
+                        finish();
                     }
                 }, 1500);
             }
@@ -96,7 +100,6 @@ public class SettingActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         mIvImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,12 +135,10 @@ public class SettingActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
                 tvSmall.setTextColor(Color.parseColor("#000000"));
                 tvMedium.setTextColor(Color.parseColor("#000000"));
                 tvLarge.setTextColor(Color.parseColor("#000000"));

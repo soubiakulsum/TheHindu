@@ -64,6 +64,7 @@ public class HomeFragment extends Fragment implements CommunicationListernerForR
         return homeFragment;
     }
 
+
     public void getPage() {
         loading = true;
         p.setVisibility(View.VISIBLE);
@@ -95,7 +96,7 @@ public class HomeFragment extends Fragment implements CommunicationListernerForR
     @Override
     public void onResume() {
         super.onResume();
-
+        Log.d("TAG", "onResume: ");
     }
 
     @Override
@@ -188,6 +189,12 @@ public class HomeFragment extends Fragment implements CommunicationListernerForR
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         return root;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("TAG", "onPause: ");
     }
 
     @Override

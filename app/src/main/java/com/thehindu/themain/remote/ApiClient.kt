@@ -80,4 +80,10 @@ interface ApiClient {
         @Path("b") mobile: String,
         @Path("c") dob: String
     )
+
+    @GET("/getnewsbyquery/{q}")
+    fun getNewsByQuery(
+        @Header("Authorization") bearerToken: String,
+        @Path("q") q: String
+    ): Call<List<NewsResponse>>
 }

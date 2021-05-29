@@ -1,6 +1,7 @@
 package com.thehindu.themain.models.recyclerview
 
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
@@ -29,6 +30,10 @@ class NewsRvAdapter(
         try {
             holder.setData(newsResponseList[position])
         } catch (e: Exception) {
+
+            Log.d(
+                "TAG", "onBindViewHolder: " + e
+            )
 
         }
     }

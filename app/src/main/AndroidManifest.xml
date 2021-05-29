@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".themain.BriefingActivity"></activity>
+        <activity android:name=".themain.SearchActivity"></activity>
+        <activity android:name=".themain.BriefingActivity" />
         <activity android:name=".themain.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

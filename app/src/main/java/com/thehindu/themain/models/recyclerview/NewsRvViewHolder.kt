@@ -38,10 +38,10 @@ class NewsRvViewHolder(
                 rv_home_tv_heading.text = newsResponse.headline
                 val formatter: DateTimeFormatter =
                     DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-                val b = LocalDateTime.parse(newsResponse.postedAt, formatter)
+                val b = LocalDateTime.parse(newsResponse.postedAt.toString(), formatter)
                 val a = LocalDateTime.now()
                 Log.d(
-                    "TAG", "setData: $b"
+                    "TAG", "setData: $b \n $a"
                 )
 
                 var str = ""
@@ -75,9 +75,11 @@ class NewsRvViewHolder(
                 ), newsResponse.id
             )
             Log.d("TAG", "setData: " + SideNavActivity.savedListList.size)
+            Log.d("TAG", "newsid : "+newsResponse.id)
             itemView.rv_cv_home.setOnClickListener {
                 val intent2 = Intent(itemView.context, SelectedNewsActivity::class.java)
                 intent2.putExtra("newsid", newsResponse.id)
+                Log.d("TAG", "newsid : "+newsResponse.id)
                 itemView.context.startActivity(intent2)
             }
 
@@ -98,6 +100,7 @@ class NewsRvViewHolder(
                 it.context.startActivity(Intent.createChooser(intent, "Share With"))
             }
         } catch (e: Exception) {
+            Log.d("TAG", "view holder e : "+e)
 
         }
 

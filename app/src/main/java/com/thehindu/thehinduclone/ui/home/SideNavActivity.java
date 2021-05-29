@@ -30,6 +30,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.thehindu.themain.BriefingActivity;
 import com.thehindu.themain.LocalConstants;
 import com.thehindu.themain.PreferenceHelper;
+import com.thehindu.themain.SearchActivity;
 import com.thehindu.themain.localdatabase.savedlist.SavedEntity;
 import com.thehindu.themain.models.recyclerview.NewsRvAdapter;
 import com.thehindu.themain.models.tokenreqres.JwtRequest;
@@ -70,6 +71,7 @@ public class SideNavActivity extends AppCompatActivity implements View.OnClickLi
     private ViewPager viewPager;
     private TabLayout tabLayout;
     public static NewsRvAdapter newsRvAdapter;
+    public ImageView imageView;
 
     private GoogleSignInOptions gso;
     private GoogleApiClient googleApiClient;
@@ -85,9 +87,20 @@ public class SideNavActivity extends AppCompatActivity implements View.OnClickLi
                 checkwithgoogle();
             }
 
+
             setContentView(R.layout.activity_side_nav);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
+
+            imageView = findViewById(R.id.searchIcon);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(SideNavActivity.this, SearchActivity.class);
+                    startActivity(i);
+                }
+            });
+
 
             viewPager = findViewById(R.id.viewPager);
             tabLayout = findViewById(R.id.tabLayout);

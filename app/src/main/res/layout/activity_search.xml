@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".themain.SearchActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvReadLater"
@@ -21,7 +22,7 @@
             android:padding="@dimen/dp_5">
 
             <ImageView
-                android:id="@+id/ivArrow1"
+                android:id="@+id/ivArrow7"
                 android:layout_width="@dimen/dp_40"
                 android:layout_height="@dimen/dp_50"
                 android:layout_margin="@dimen/dp_10"
@@ -38,9 +39,8 @@
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ivArrow1"
+                app:layout_constraintStart_toEndOf="@id/ivArrow7"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <ImageView
                 android:layout_width="@dimen/dp_40"
@@ -56,31 +56,24 @@
     </androidx.cardview.widget.CardView>
 
     <EditText
-        android:id="@+id/etSearchReadLater"
+        android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:layout_marginEnd="@dimen/dp_10"
+        android:foregroundTint="@color/black"
         android:hint="Search"
         android:textColorHint="@color/textColor"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvReadLater" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/refreshReadLater"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="120dp"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/etSearchReadLater">
+        app:layout_constraintTop_toBottomOf="@id/etSearch" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_readLater"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

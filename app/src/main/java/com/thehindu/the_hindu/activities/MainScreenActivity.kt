@@ -13,10 +13,6 @@ import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
 import com.thehindu.the_hindu.adapter.FragmentAdapter
 
-
-/**
- * This Activity demonstrates a simple view pager where there are 3 Fragments
- */
 class MainScreenActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     private var mViewPager: ViewPager2? = null
     private var tabLayout: TabLayout? = null
@@ -29,8 +25,6 @@ class MainScreenActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener 
         initViews()
         setViewPagerAdapter()
     }
-
-
     private fun initViews() {
 
         mTvNext = findViewById(R.id.tvNext)

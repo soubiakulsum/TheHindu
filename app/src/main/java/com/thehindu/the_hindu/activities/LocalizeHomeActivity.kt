@@ -1,4 +1,4 @@
-package com.example.the_hindu.activities
+package com.thehindu.the_hindu.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -28,8 +28,6 @@ class LocalizeHomeActivity : AppCompatActivity() {
         }
 
         viewModel.getStateNAme()
-
-
         viewModel.getList().observe(this, Observer{
             selectionList.addAll(it as Collection<PersonaliseModel>)
             personaliseAdapter.notifyDataSetChanged()
