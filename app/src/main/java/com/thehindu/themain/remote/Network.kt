@@ -12,7 +12,7 @@ class Network {
 
         fun getInstance(): Retrofit {
             val builder = Retrofit.Builder()
-                .baseUrl("http://192.168.0.105:8080")
+                .baseUrl("https://the-hindu-clone.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build())
             return builder.build()
